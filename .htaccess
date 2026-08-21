@@ -1,0 +1,5 @@
+# Laravel app root: only public/ should ever be served directly.
+# This blocks direct web access to .env, storage, vendor, app/, database/, legacy-static/, etc.
+# (Apache's DocumentRoot here is the shared XAMPP htdocs/, not this project's public/ folder,
+# so without this rule everything in the project root would be web-readable.)
+Require all denied

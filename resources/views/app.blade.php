@@ -5,7 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title inertia>{{ $siteName ?? config('app.name', 'ວິທະຍາໄລຄູສົງ ອົງຕື້') }}</title>
+    <title inertia>{{ $metaTitle ?? $siteName ?? config('app.name', 'ວິທະຍາໄລຄູສົງ ອົງຕື້') }}</title>
+    @if(!empty($metaDescription))
+    <meta name="description" content="{{ $metaDescription }}">
+    @endif
+    @if(!empty($metaKeywords))
+    <meta name="keywords" content="{{ $metaKeywords }}">
+    @endif
+
+    @if(!empty($faviconUrl))
+    <link rel="icon" href="{{ $faviconUrl }}">
+    <link rel="apple-touch-icon" href="{{ $faviconUrl }}">
+    @else
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    @endif
 
     <script>
         // The app may be served from a subdirectory (e.g. XAMPP htdocs without a

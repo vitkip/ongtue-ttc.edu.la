@@ -47,6 +47,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandName($general['college_name_lo'] ?? 'ວິທະຍາໄລຄູສົງ ອົງຕື້')
             ->brandLogoHeight('2.25rem')
             ->when($brandLogo, fn (Panel $panel) => $panel->brandLogo($brandLogo))
+            ->favicon($brandLogo ?? asset('favicon.ico'))
             ->login(Login::class)
             ->renderHook(
                 'panels::head.end',

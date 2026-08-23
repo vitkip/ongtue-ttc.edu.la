@@ -37,12 +37,15 @@ class GeneralSettings extends Page implements HasForms
             'footer_address' => $settings['footer_address'] ?? 'ຖະໜົນເສດຖາທິລາດ, ບ້ານວັດຈັນ, ນະຄອນຫຼວງວຽງຈັນ',
             'footer_phone' => $settings['footer_phone'] ?? '+856 21 212 212',
             'footer_email' => $settings['footer_email'] ?? 'info@ongtuecollege.edu.la',
-            'footer_quick_links' => ! empty($settings['footer_quick_links'])
+            'footer_quick_links' => !empty($settings['footer_quick_links'])
                 ? json_decode($settings['footer_quick_links'], true)
                 : self::defaultQuickLinks(),
-            'footer_social_links' => ! empty($settings['footer_social_links'])
+            'footer_social_links' => !empty($settings['footer_social_links'])
                 ? json_decode($settings['footer_social_links'], true)
                 : [],
+            'meta_title' => $settings['meta_title'] ?? 'ວິທະຍາໄລຄູສົງ ອົງຕື້ | ສະຖາບັນຝຶກອົບຮົມຄູສອນສາສະໜາ ແລະ ພຸດທະສາສະໜາໃນລາວ',
+            'meta_description' => $settings['meta_description'] ?? 'ວິທະຍາໄລຄູສົງ ອົງຕື້ (Ong Tue Buddhist Sangha College) ເປັນສະຖາບັນການສຶກສາຊັ້ນສູງດ້ານພຸດທະສາສະໜາ ຝຶກອົບຮົມພຣະສົງ-ສາມະເນນ ແລະ ຄູສອນສາສະໜາ ເພື່ອສືບທອດ ອານຸລັກ ແລະ ເຜີຍແຜ່ພຸດທະສາສະໜາໃນ ສປປ ລາວ ຢ່າງຍືນຍົງ ຕັ້ງຢູ່ນະຄອນຫຼວງວຽງຈັນ.',
+            'meta_keywords' => $settings['meta_keywords'] ?? 'ວິທະຍາໄລຄູສົງ ອົງຕື້, ພຸດທະສາສະໜາລາວ, ພຸດທະສາສະໜາໃນປະເທດລາວ, ຄູສອນສາສະໜາ, ໂຮງຮຽນພຣະສົງ, ພຣະສົງລາວ, ສາມະເນນ, ການສຶກສາພຸດທະສາສະໜາ, ວັດຈັນ, ນະຄອນຫຼວງວຽງຈັນ, Ong Tue Buddhist Sangha College, ພຸດທະສາສະໜາເຖຣະວາດ',
         ]);
     }
 
@@ -120,14 +123,31 @@ class GeneralSettings extends Page implements HasForms
                             ->addActionLabel('ເພີ່ມລິ້ງດ່ວນ')
                             ->reorderable()
                             ->collapsible()
-                            ->itemLabel(fn (array $state): ?string => $state['label'] ?? null)
+                            ->itemLabel(fn(array $state): ?string => $state['label'] ?? null)
                             ->columnSpanFull(),
                     ]),
-                Forms\Components\Section::make('ໂຊເຊียລມີເດຍ (Follow Us)')
+                Forms\Components\Section::make('SEO (ການປັບປຸງເວັບໄຊທ໌ໃຫ້ຄົ້ນຫາງ່າຍ)')
+                    ->description('ຂໍ້ມູນນີ້ຈະຖືກໃຊ້ໃນ meta tag ຂອງໜ້າຫຼັກ ເພື່ອຊ່ວຍໃຫ້ Google ຄົ້ນຫາ ແລະ ສະແດງຜົນເວັບໄຊທ໌ໄດ້ດີຂຶ້ນ')
+                    ->schema([
+                        Forms\Components\TextInput::make('meta_title')
+                            ->label('ຫົວຂໍ້ SEO (Meta Title)')
+                            ->maxLength(255)
+                            ->columnSpanFull(),
+                        Forms\Components\Textarea::make('meta_description')
+                            ->label('ຄຳອະທິບາຍ SEO (Meta Description)')
+                            ->rows(3)
+                            ->maxLength(500)
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('meta_keywords')
+                            ->label('ຄຳຄົ້ນຫາ (Meta Keywords, ຄັ້ນດ້ວຍລູກນ້ຳ)')
+                            ->maxLength(1000)
+                            ->columnSpanFull(),
+                    ]),
+                Forms\Components\Section::make('ໂຊຊຽວມີເດຍ (Follow Us)')
                     ->description('ລິ້ງທີ່ຈະສະແດງຢູ່ໃນສ່ວນ FOLLOW US ຂອງ footer')
                     ->schema([
                         Forms\Components\Repeater::make('footer_social_links')
-                            ->label('ລິ້ງໂຊເຊียລມີເດຍ')
+                            ->label('ລິ້ງໂຊຊຽວມີເດຍ')
                             ->hiddenLabel()
                             ->schema([
                                 Forms\Components\Select::make('platform')
@@ -154,7 +174,7 @@ class GeneralSettings extends Page implements HasForms
                             ->addActionLabel('ເພີ່ມລິ້ງໂຊເຊียລມີເດຍ')
                             ->reorderable()
                             ->collapsible()
-                            ->itemLabel(fn (array $state): ?string => $state['platform'] ?? null)
+                            ->itemLabel(fn(array $state): ?string => $state['platform'] ?? null)
                             ->columnSpanFull(),
                     ]),
             ])
@@ -174,6 +194,9 @@ class GeneralSettings extends Page implements HasForms
             'footer_email' => ['type' => 'text', 'label' => 'ອີເມວ (Footer)'],
             'footer_quick_links' => ['type' => 'json', 'label' => 'ລິ້ງດ່ວນ (Footer)'],
             'footer_social_links' => ['type' => 'json', 'label' => 'ລິ້ງໂຊເຊියລມີເດຍ (Footer)'],
+            'meta_title' => ['type' => 'text', 'label' => 'ຫົວຂໍ້ SEO (Meta Title)'],
+            'meta_description' => ['type' => 'textarea', 'label' => 'ຄຳອະທິບາຍ SEO (Meta Description)'],
+            'meta_keywords' => ['type' => 'text', 'label' => 'ຄຳຄົ້ນຫາ (Meta Keywords)'],
         ];
 
         foreach ($fields as $key => $meta) {

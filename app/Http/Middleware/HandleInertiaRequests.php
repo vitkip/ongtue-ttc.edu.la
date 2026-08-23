@@ -61,6 +61,10 @@ class HandleInertiaRequests extends Middleware
         ];
 
         View::share('siteName', $siteSettings['collegeNameLo']);
+        View::share('metaTitle', $general['meta_title'] ?? $siteSettings['collegeNameLo']);
+        View::share('metaDescription', $general['meta_description'] ?? '');
+        View::share('metaKeywords', $general['meta_keywords'] ?? '');
+        View::share('faviconUrl', $siteSettings['logoUrl']);
 
         return [
             ...parent::share($request),

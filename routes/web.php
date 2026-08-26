@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
+// Both routes below skip middleware that queries the database before the
+// route itself runs — on a fresh deploy, before `migrate` has ever been run,
+// none of those tables exist yet, and /ops is what's supposed to create them:
+//   - StartSession (+ ShareErrorsFromSession, CSRF's XSRF-TOKEN cookie
+//     handling, which both assume it already ran) queries `sessions`
+//     because SESSION_DRIVER=database.
+//   - HandleInertiaRequests is appended to the global `web` group in
+//     bootstrap/app.php, so it runs for every route, not just Inertia
+//     pages — it queries `site_settings` to share site name/branding props.
+$withoutSessionMiddleware = [
+    \Illuminate\Session\Middleware\StartSession::class,
+    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    \Illuminate\Foundation\Http\Middleware\ValidateCsrfToken::class,
+    \App\Http\Middleware\HandleInertiaRequests::class,
+];
+
 // Serve files from the "public" storage disk directly.
 // Used in production when PUBLIC_STORAGE_URL is set (see config/filesystems.php) —
 // on hosts where symlink() is disabled, `php artisan storage:link` cannot create
@@ -26,7 +42,7 @@ Route::get('/media', function (\Illuminate\Http\Request $request) {
     abort_unless($path !== '' && !str_contains($path, '..') && Storage::disk('public')->exists($path), 404);
 
     return Storage::disk('public')->response($path);
-})->name('media.show');
+})->withoutMiddleware($withoutSessionMiddleware)->name('media.show');
 
 // One-off maintenance endpoint for hosts where the terminal/SSH is not
 // available. Runs Artisan commands in-process (Artisan::call does not use
@@ -48,14 +64,16 @@ Route::get('/ops/{action}', function (string $action, \Illuminate\Http\Request $
         'config-cache' => 'config:cache',
         'route-cache' => 'route:cache',
         'migrate' => 'migrate',
+        'seed' => 'db:seed',
     ];
 
     abort_unless(array_key_exists($action, $commands), 404);
 
-    $exitCode = Artisan::call($commands[$action], $action === 'migrate' ? ['--force' => true] : []);
+    $needsForce = in_array($action, ['migrate', 'seed'], true);
+    $exitCode = Artisan::call($commands[$action], $needsForce ? ['--force' => true] : []);
 
     return response("[$action] exit code: $exitCode\n\n".Artisan::output(), 200, ['Content-Type' => 'text/plain']);
-})->name('ops.run');
+})->withoutMiddleware($withoutSessionMiddleware)->name('ops.run');
 
 Route::get('/', HomeController::class)->name('home');
 Route::get('/courses', CourseController::class)->name('courses');

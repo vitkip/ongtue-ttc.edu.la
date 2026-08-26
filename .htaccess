@@ -1,5 +1,29 @@
 # Laravel app root: only public/ should ever be served directly.
-# This blocks direct web access to .env, storage, vendor, app/, database/, legacy-static/, etc.
-# (Apache's DocumentRoot here is the shared XAMPP htdocs/, not this project's public/ folder,
-# so without this rule everything in the project root would be web-readable.)
-Require all denied
+#
+# On the local XAMPP vhost, DocumentRoot points straight at public/, so this
+# file is never even read there. It matters on hosts (like production, and
+# the old shared-htdocs path-based access) where DocumentRoot is the project
+# root itself — there, "Require all denied" alone breaks the site (Apache
+# denies everything before Laravel ever runs), so instead requests are
+# rewritten into public/. An existing file (e.g. .env, composer.json)
+# bypasses that rewrite entirely, so dotfiles and internal app folders are
+# denied outright as well, closing that gap.
+
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to internal folders even when a matching file exists
+    # on disk (the !-f/!-d rewrite below would otherwise let Apache serve it).
+    RewriteCond %{REQUEST_URI} ^/(app|bootstrap|config|database|resources|routes|storage|tests|vendor)(/|$) [NC]
+    RewriteRule ^ - [F,L]
+
+    RewriteRule ^$ public/index.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

@@ -123,4 +123,17 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Deploy Secret
+    |--------------------------------------------------------------------------
+    |
+    | Guards the /ops/{action} maintenance route (routes/web.php), used to
+    | run cache clears / migrations over HTTP on hosts with no SSH/terminal
+    | access. Leave empty locally — the route 404s when unset.
+    |
+    */
+
+    'deploy_secret' => env('DEPLOY_SECRET'),
+
 ];

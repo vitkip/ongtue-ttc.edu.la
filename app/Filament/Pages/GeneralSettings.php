@@ -171,7 +171,7 @@ class GeneralSettings extends Page implements HasForms
                                     ->maxLength(500),
                             ])
                             ->columns(2)
-                            ->addActionLabel('ເພີ່ມລິ້ງໂຊເຊียລມີເດຍ')
+                            ->addActionLabel('ເພີ່ມລິ້ງໂຊຊຽວມີເດຍ')
                             ->reorderable()
                             ->collapsible()
                             ->itemLabel(fn(array $state): ?string => $state['platform'] ?? null)

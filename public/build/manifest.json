@@ -1,0 +1,129 @@
+{
+  "_SiteLayout-ChVIRLGN.js": {
+    "file": "assets/SiteLayout-ChVIRLGN.js",
+    "name": "SiteLayout",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_courseBadge-81jahtPG.js": {
+    "file": "assets/courseBadge-81jahtPG.js",
+    "name": "courseBadge"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CoxaQsbz.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/Pages/AboutUs.jsx": {
+    "file": "assets/AboutUs-BiqXuCul.js",
+    "name": "AboutUs",
+    "src": "resources/js/Pages/AboutUs.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Apply.jsx": {
+    "file": "assets/Apply-BOWXVb3b.js",
+    "name": "Apply",
+    "src": "resources/js/Pages/Apply.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Contact.jsx": {
+    "file": "assets/Contact-tOyaAS00.js",
+    "name": "Contact",
+    "src": "resources/js/Pages/Contact.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Courses.jsx": {
+    "file": "assets/Courses-CRooa0gl.js",
+    "name": "Courses",
+    "src": "resources/js/Pages/Courses.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js",
+      "_courseBadge-81jahtPG.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Events.jsx": {
+    "file": "assets/Events-Dlxg3NWy.js",
+    "name": "Events",
+    "src": "resources/js/Pages/Events.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Home.jsx": {
+    "file": "assets/Home-CQn-l3ms.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js",
+      "_courseBadge-81jahtPG.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/Pages/Students.jsx": {
+    "file": "assets/Students-DTe0yGtv.js",
+    "name": "Students",
+    "src": "resources/js/Pages/Students.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SiteLayout-ChVIRLGN.js"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DL9_-pGA.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/AboutUs.jsx",
+      "resources/js/Pages/Apply.jsx",
+      "resources/js/Pages/Contact.jsx",
+      "resources/js/Pages/Courses.jsx",
+      "resources/js/Pages/Events.jsx",
+      "resources/js/Pages/Home.jsx",
+      "resources/js/Pages/Students.jsx"
+    ],
+    "css": [
+      "assets/app-CoxaQsbz.css"
+    ]
+  }
+}

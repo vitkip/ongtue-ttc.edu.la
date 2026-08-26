@@ -1,0 +1,1 @@
+const a=["bg-monastic-saffron text-on-primary","bg-tertiary text-on-tertiary","bg-academic-maroon text-on-primary","bg-surface-tint text-on-primary"];function n(t){if(!t)return a[0];let r=0;for(let e=0;e<t.length;e+=1)r=r*31+t.charCodeAt(e)>>>0;return a[r%a.length]}export{n as b};

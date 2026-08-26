@@ -41,7 +41,11 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            // On hosts where symlink() is disabled (`storage:link` cannot run),
+            // set PUBLIC_STORAGE_URL="${APP_URL}/media?f=" in .env to serve
+            // files through the /media route (routes/web.php) instead of the
+            // public/storage symlink. Leave unset where the symlink works.
+            'url' => env('PUBLIC_STORAGE_URL', env('APP_URL').'/storage'),
             'visibility' => 'public',
             'throw' => false,
             'report' => false,

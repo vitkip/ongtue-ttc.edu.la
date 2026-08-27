@@ -119,7 +119,7 @@ export default function SiteLayout({ children }) {
                             href={url('/apply')}
                             className="hidden md:block bg-academic-maroon text-on-primary px-6 py-2.5 rounded-lg font-label-caps hover:bg-primary transition-all shadow-md"
                         >
-                            APPLY NOW
+                            ລົງທະບຽນຮຽນ
                         </Link>
                         <button
                             onClick={() => setMobileOpen((v) => !v)}
@@ -150,7 +150,7 @@ export default function SiteLayout({ children }) {
                                 href={url('/apply')}
                                 className="w-full mt-2 bg-academic-maroon text-on-primary py-2.5 rounded-lg font-label-caps text-center"
                             >
-                                APPLY NOW
+                                ລົງທະບຽນຮຽນ
                             </Link>
                         </div>
                     </div>

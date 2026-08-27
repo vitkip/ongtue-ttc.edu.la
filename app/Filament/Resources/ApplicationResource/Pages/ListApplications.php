@@ -13,6 +13,11 @@ class ListApplications extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            Actions\Action::make('viewFrontend')
+                ->label('ເບິ່ງໜ້າເວັບ (Frontend)')
+                ->icon('heroicon-o-arrow-top-right-on-square')
+                ->color('gray')
+                ->url(route('students'), shouldOpenInNewTab: true),
             Actions\CreateAction::make(),
         ];
     }

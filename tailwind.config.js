@@ -79,10 +79,11 @@ export default {
                 'stack-lg': '32px',
             },
             fontFamily: {
-                'body-lg': ['Inter', 'Noto Serif Lao', 'sans-serif'],
+                'google-sans': ['Google Sans', 'Inter', 'Noto Sans Lao', 'sans-serif'],
+                'body-lg': ['Google Sans', 'Inter', 'Noto Serif Lao', 'sans-serif'],
                 'headline-lg': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
                 'headline-display': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
-                'body-md': ['Inter', 'Noto Serif Lao', 'sans-serif'],
+                'body-md': ['Google Sans', 'Inter', 'Noto Serif Lao', 'sans-serif'],
                 'headline-lg-mobile': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
                 'label-caps': ['Work Sans', 'Noto Sans Lao', 'sans-serif'],
             },

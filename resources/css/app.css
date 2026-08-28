@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* Google Sans everywhere on the frontend, with a Lao-script fallback. */
+    html,
+    body {
+        font-family: 'Google Sans', 'Noto Sans Lao', sans-serif;
+    }
+}

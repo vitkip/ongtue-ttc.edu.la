@@ -29,8 +29,9 @@
         window.APP_BASE_PATH = @json(rtrim(parse_url(config('app.url'), PHP_URL_PATH) ?? '', '/'));
     </script>
 
+    {{-- Google Sans is the only display/body typeface; Noto Sans Lao is the Lao-script fallback. --}}
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Libre+Caslon+Text:wght@400;700&family=Work+Sans:wght@600&family=Noto+Serif+Lao:wght@400;600;700&family=Noto+Sans+Lao:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"

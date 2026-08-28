@@ -79,13 +79,16 @@ export default {
                 'stack-lg': '32px',
             },
             fontFamily: {
-                'google-sans': ['Google Sans', 'Inter', 'Noto Sans Lao', 'sans-serif'],
-                'body-lg': ['Google Sans', 'Inter', 'Noto Serif Lao', 'sans-serif'],
-                'headline-lg': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
-                'headline-display': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
-                'body-md': ['Google Sans', 'Inter', 'Noto Serif Lao', 'sans-serif'],
-                'headline-lg-mobile': ['Libre Caslon Text', 'Noto Serif Lao', 'serif'],
-                'label-caps': ['Work Sans', 'Noto Sans Lao', 'sans-serif'],
+                // Google Sans is the single typeface across the whole frontend.
+                // Noto Sans Lao stays as the Lao-script fallback.
+                'sans': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'google-sans': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'body-lg': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'body-md': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'headline-lg': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'headline-display': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'headline-lg-mobile': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
+                'label-caps': ['Google Sans', 'Noto Sans Lao', 'sans-serif'],
             },
         },
     },

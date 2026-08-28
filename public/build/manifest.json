@@ -1,6 +1,6 @@
 {
-  "_SiteLayout-C3g1Ci2d.js": {
-    "file": "assets/SiteLayout-C3g1Ci2d.js",
+  "_SiteLayout-DttnVlu4.js": {
+    "file": "assets/SiteLayout-DttnVlu4.js",
     "name": "SiteLayout",
     "imports": [
       "resources/js/app.jsx"
@@ -11,105 +11,105 @@
     "name": "courseBadge"
   },
   "resources/css/app.css": {
-    "file": "assets/app-ClbYswyd.css",
+    "file": "assets/app-DTJ25SST.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/Pages/AboutUs.jsx": {
-    "file": "assets/AboutUs-ClWR7Xeg.js",
+    "file": "assets/AboutUs-DsxtPBZ-.js",
     "name": "AboutUs",
     "src": "resources/js/Pages/AboutUs.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js"
+      "_SiteLayout-DttnVlu4.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Apply.jsx": {
-    "file": "assets/Apply-BdHBYlqM.js",
+    "file": "assets/Apply-Chf4liCF.js",
     "name": "Apply",
     "src": "resources/js/Pages/Apply.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js"
+      "_SiteLayout-DttnVlu4.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Contact.jsx": {
-    "file": "assets/Contact-MJaSw8wg.js",
+    "file": "assets/Contact-Vz84Pk4Q.js",
     "name": "Contact",
     "src": "resources/js/Pages/Contact.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js"
+      "_SiteLayout-DttnVlu4.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Courses.jsx": {
-    "file": "assets/Courses-CUszWCOX.js",
+    "file": "assets/Courses-BL1FZjCH.js",
     "name": "Courses",
     "src": "resources/js/Pages/Courses.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js",
+      "_SiteLayout-DttnVlu4.js",
       "_courseBadge-81jahtPG.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Events.jsx": {
-    "file": "assets/Events-CaCh-geE.js",
+    "file": "assets/Events-BDLIzn27.js",
     "name": "Events",
     "src": "resources/js/Pages/Events.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js"
+      "_SiteLayout-DttnVlu4.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Home.jsx": {
-    "file": "assets/Home-D_-_9VGi.js",
+    "file": "assets/Home-DbaxvLc9.js",
     "name": "Home",
     "src": "resources/js/Pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js",
+      "_SiteLayout-DttnVlu4.js",
       "_courseBadge-81jahtPG.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/Pages/Students.jsx": {
-    "file": "assets/Students-CdLzh7tZ.js",
+    "file": "assets/Students-Di582aUa.js",
     "name": "Students",
     "src": "resources/js/Pages/Students.jsx",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.jsx",
-      "_SiteLayout-C3g1Ci2d.js"
+      "_SiteLayout-DttnVlu4.js"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-2WT_kT5r.js",
+    "file": "assets/app-DJZ6u-MR.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -123,7 +123,7 @@
       "resources/js/Pages/Students.jsx"
     ],
     "css": [
-      "assets/app-ClbYswyd.css"
+      "assets/app-DTJ25SST.css"
     ]
   }
 }
